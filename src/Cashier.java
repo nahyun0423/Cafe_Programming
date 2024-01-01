@@ -8,7 +8,6 @@ public class Cashier extends Person {
         System.out.println(price + "원 " + coffee + " 제조");
         changeMoney(money);
         System.out.println("매출 : " + getMoney());
-
         return price;
     }
 }
