@@ -5,8 +5,14 @@ public class Guest extends Person {
 
     public void orderCoffee(Cashier cashier, Menu.MenuItem coffee, String temperature) throws Exception {
         int price = Menu.getPrice(coffee);
+
         if (temperature.equals("hot")) {
-            price -= 500;
+            if (coffee == Menu.MenuItem.ORANGEJUICE || coffee == Menu.MenuItem.SMOOTHIE) {
+                System.out.println("해당 메뉴는 ice만 가능합니다.");
+                throw new Exception("해당 메뉴는 ice만 가능합니다.");
+            } else {
+                price -= 500;
+            }
         }
 
         int money = getMoney() - price;
