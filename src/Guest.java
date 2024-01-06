@@ -22,7 +22,7 @@ public class Guest extends Person {
             System.out.println("잔액이 부족합니다.");
             throw new Exception("잔액이 부족합니다.");
         } else {
-            System.out.println("==결제 완료== \n손님 잔액 : " + getMoney());
+            System.out.println("==결제 완료== \n'" + getName() + "'님의 잔액 : " + getMoney());
             cashier.makeCoffee(coffee, price);
         }
     }

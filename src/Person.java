@@ -16,4 +16,8 @@ public class Person {
     public int getMoney() {
         return money;
     }
+
+    public String getName() {
+        return name;
+    }
 }
