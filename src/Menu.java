@@ -1,33 +1,24 @@
-public class Menu {
-    private static final int AMERICANO_PRICE = 3000;
-    private static final int LATTE_PRICE = 3500;
-    private static final int VANILLALATTE_PRICE = 4000;
-    private static final int SMOOTHIE_PRICE = 5000;
-    private static final int ORANGEJUICE_PRICE = 6000;
+public enum Menu {
+        AMERICANO(3000),
+        LATTE(3500),
+        VANILLALATTE(4000),
+        SMOOTHIE(5000),
+        ORANGEJUICE(6000);
 
+        private final int price;
 
-    public enum MenuItem {
-        AMERICANO,
-        LATTE,
-        VANILLALATTE,
-        SMOOTHIE,
-        ORANGEJUICE
-    }
-
-    public static int getPrice(MenuItem menuItem) {
-        switch (menuItem) {
-            case AMERICANO:
-                return AMERICANO_PRICE;
-            case LATTE:
-                return LATTE_PRICE;
-            case VANILLALATTE:
-                return VANILLALATTE_PRICE;
-            case SMOOTHIE:
-                return SMOOTHIE_PRICE;
-            case ORANGEJUICE:
-                return ORANGEJUICE_PRICE;
-            default:
-                throw new IllegalArgumentException("잘못된 메뉴 입력");
+        Menu(int price) {
+                this.price = price;
         }
-    }
+
+        public static int getPrice(Menu menu) {
+                return menu.price;
+        }
+
+        public static void isHotAvailable(Menu menu) throws Exception {
+                if (menu.equals(ORANGEJUICE) || menu.equals(SMOOTHIE)) {
+                        System.out.println("*해당 메뉴는 ice만 가능합니다.*");
+                        throw new Exception("*해당 메뉴는 ice만 가능합니다.*");
+                }
+        }
 }

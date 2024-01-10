@@ -3,11 +3,18 @@ public class Cashier extends Person {
         super(id, name, money);
     }
 
-    public int makeCoffee(Menu.MenuItem coffee, int price) {
-        int money = getMoney() + price;
-        System.out.println(price + "원 " + coffee + " 제조");
-        changeMoney(money);
-        System.out.println("가게 매출 : " + getMoney() + "\n========\n");
-        return price;
+
+    public void calculate(Guest guest, Barista barista, Menu coffee, String temperature) throws Exception {
+        int price = Menu.getPrice(coffee);
+
+        if (temperature.equals("hot")) {
+            Menu.isHotAvailable(coffee);
+            price -= 500;
+        }
+
+        guest.payMoney(price);
+        barista.getSalary(barista, price);
+        barista.makeCoffee(coffee);
+        System.out.println("\n");
     }
 }
