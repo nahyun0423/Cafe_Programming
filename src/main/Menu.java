@@ -1,3 +1,5 @@
+package main;
+
 public enum Menu {
         AMERICANO(3000),
         LATTE(3500),

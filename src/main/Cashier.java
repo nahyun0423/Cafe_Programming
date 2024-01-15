@@ -1,3 +1,5 @@
+package main;
+
 public class Cashier extends Person {
     public Cashier(int id, String name, int money) {
         super(id, name, money);
@@ -13,8 +15,8 @@ public class Cashier extends Person {
         }
 
         guest.payMoney(price);
-        barista.getSalary(barista, price);
+        barista.getIncentive(barista, price);
         barista.makeCoffee(coffee);
-        System.out.println("\n");
+
     }
 }

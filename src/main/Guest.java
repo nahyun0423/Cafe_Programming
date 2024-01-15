@@ -1,3 +1,5 @@
+package main;
+
 public class Guest extends Person {
 
     public Guest(int id, String name, int money) {
