@@ -10,5 +10,10 @@
 - 주문 완료 시 주문 내역 전송
 - hot으로 주문 시 500원 할인
 - 커피 제조 시 음료의 1/10 가격 바리스타 인센티브로 지급  
-<br/>  
+<br/>
+
 ## 도메인 설계 
+
+![image](https://github.com/nahyun0423/Cafe_Programming/assets/68987116/9e9de7e5-39ba-43bd-90ab-8574502622db)
+
+![image](https://github.com/nahyun0423/Cafe_Programming/assets/68987116/baa9f344-ea0e-426f-9355-891dba248df8)
