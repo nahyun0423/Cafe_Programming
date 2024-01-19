@@ -1,8 +1,8 @@
 package main;
 
-public class Guest extends Person {
+public class Customer extends Person {
 
-    public Guest(int id, String name, int money) {
+    public Customer(int id, String name, int money) {
         super(id, name, money);
     }
 

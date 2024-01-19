@@ -6,7 +6,7 @@ public class Cashier extends Person {
     }
 
 
-    public void calculate(Guest guest, Barista barista, Menu coffee, String temperature) throws Exception {
+    public void calculate(Customer customer, Barista barista, Menu coffee, String temperature) throws Exception {
         int price = Menu.getPrice(coffee);
 
         if (temperature.equals("hot")) {
@@ -14,9 +14,15 @@ public class Cashier extends Person {
             price -= 500;
         }
 
-        guest.payMoney(price);
+        customer.payMoney(price);
         barista.getIncentive(barista, price);
-        barista.makeCoffee(coffee);
 
+        //  barista.makeCoffee(coffee);
+        requestCoffee(barista, coffee, temperature);
+
+    }
+
+    public void requestCoffee(Barista barista, Menu coffee, String temperature) {
+        barista.makeCoffee(coffee, temperature);
     }
 }

@@ -5,7 +5,7 @@ public class Barista extends Person {
         super(id, name, money);
     }
 
-    public void makeCoffee(Menu coffee) {
+    public void makeCoffee(Menu coffee, String temperature) {
         System.out.println(coffee + " 제조 완료되었습니다.");
         System.out.println("\n");
     }
