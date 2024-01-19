@@ -1,8 +1,8 @@
 package main;
 
-public class Barista extends Person {
-    public Barista(int id, String name, int money) {
-        super(id, name, money);
+public class Barista extends Staff {
+    public Barista( String name, int money) {
+        super(name, money);
     }
 
     public void makeCoffee(Menu coffee, String temperature) {
@@ -11,7 +11,7 @@ public class Barista extends Person {
     }
 
     public void getIncentive(Barista barista, int price) {
-        if (getId() == barista.getId()) {
+        if (getName() == barista.getName()) {
             changeMoney(getMoney() + (price / 10));
             System.out.println(getName() + " 바리스타 인센티브 :" + getMoney());
         }

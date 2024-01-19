@@ -1,12 +1,12 @@
 package main;
 
-public class Person {
-    private int id;
+public class Staff {
     private String name;
     private int money;
+    private int startTime;
+    private int endTime;
 
-    public Person(int id, String name, int money) {
-        this.id = id;
+    public Staff(String name, int money) {
         this.name = name;
         this.money = money;
     }
@@ -23,7 +23,7 @@ public class Person {
         return name;
     }
 
-    public int getId() {
-        return id;
+    public int requestPay() {
+
     }
 }

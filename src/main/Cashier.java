@@ -1,8 +1,8 @@
 package main;
 
-public class Cashier extends Person {
-    public Cashier(int id, String name, int money) {
-        super(id, name, money);
+public class Cashier extends Staff {
+    public Cashier(String name, int money) {
+        super(name, money);
     }
 
 

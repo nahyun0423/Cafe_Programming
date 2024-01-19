@@ -1,9 +1,24 @@
 package main;
 
-public class Customer extends Person {
+public class Customer {
+    private String id;
+    private int money;
 
-    public Customer(int id, String name, int money) {
-        super(id, name, money);
+    public Customer(String id, int money) {
+        this.id = id;
+        this.money = money;
+    }
+
+    public void changeMoney(int moneyToChange) {
+        this.money = moneyToChange;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public void orderCoffee(Cashier cashier, Barista barista, Menu coffee, String temperature) throws Exception {
@@ -19,7 +34,7 @@ public class Customer extends Person {
             throw new Exception("잔액이 부족합니다.");
         } else {
             System.out.println("==결제 완료==");
-            System.out.println(getName() + "님의 잔액 : " + getMoney());
+            System.out.println(getId() + "님의 잔액 : " + getMoney());
         }
     }
 }
