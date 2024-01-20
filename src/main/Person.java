@@ -1,12 +1,11 @@
 package main;
 
-public class Staff {
+public class Person {
     private String name;
     private int money;
-    private int startTime;
-    private int endTime;
 
-    public Staff(String name, int money) {
+
+    public Person(String name, int money) {
         this.name = name;
         this.money = money;
     }
@@ -23,7 +22,5 @@ public class Staff {
         return name;
     }
 
-    public int requestPay() {
 
-    }
 }

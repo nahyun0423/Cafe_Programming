@@ -1,13 +1,17 @@
 package main;
 
 public class Owner {
-    private int money;
+    private int money = 0;
 
-    public int payIncentive () {
-
+    public void getSales(int price) {
+        changeMoney(getMoney() + (price - 2 * (price / 10)));
     }
 
-    public boolean checkTime() {
-
+    public int getMoney() {
+        return  money;
     }
+    public void changeMoney(int moneyToChange) {
+        this.money = moneyToChange;
+    }
+
 }
