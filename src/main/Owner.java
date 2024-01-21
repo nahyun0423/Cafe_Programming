@@ -8,8 +8,9 @@ public class Owner {
     }
 
     public int getMoney() {
-        return  money;
+        return money;
     }
+
     public void changeMoney(int moneyToChange) {
         this.money = moneyToChange;
     }
