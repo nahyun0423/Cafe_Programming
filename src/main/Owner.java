@@ -1,18 +1,21 @@
 package main;
 
 public class Owner {
-    private int money = 0;
+    private static int money = 0;
 
-    public void getSales(int price) {
-        changeMoney(getMoney() + (price - 2 * (price / 10)));
+    public static void getSales(int price) {
+        changeMoney(getMoney() + price);
     }
 
-    public int getMoney() {
+    public int giveIncentive(Staff person) {
+        return person.getTotalOrder() * 500;
+    }
+
+    public static int getMoney() {
         return money;
     }
 
-    public void changeMoney(int moneyToChange) {
-        this.money = moneyToChange;
+    private static void changeMoney(int moneyToChange) {
+        money = moneyToChange;
     }
-
 }

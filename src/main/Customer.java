@@ -1,27 +1,40 @@
 package main;
 
-public class Customer extends Person {
+public class Customer {
+    private String name;
+    private int money;
 
     public Customer(String name, int money) {
-        super(name, money);
+        this.name = name;
+        this.money = money;
     }
 
-    public void orderCoffee(Barista barista, Cashier cashier, Menu coffee, String temperature) throws Exception {
-        cashier.calculate(this, barista, coffee, temperature);
+    public void orderCoffee(Cashier cashier, Menu coffee) {
+        cashier.processOrder(this, coffee);
     }
 
-    public boolean payMoney(int price) throws Exception {
+    public boolean payMoney(int price) {
         int money = getMoney() - price;
-        changeMoney(money);
 
         if (money < 0) {
             System.out.println("잔액이 부족합니다.");
-            throw new Exception("잔액이 부족합니다.");
+            return false;
         }
-
+        changeMoney(money);
         System.out.println("==결제 완료==");
         System.out.println(getName() + "님의 잔액 : " + getMoney());
         return true;
     }
 
+    public void changeMoney(int moneyToChange) {
+        this.money = moneyToChange;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

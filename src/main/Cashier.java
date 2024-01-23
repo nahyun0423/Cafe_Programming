@@ -1,35 +1,20 @@
 package main;
 
-public class Cashier extends Person {
-    Owner owner = new Owner();
+public class Cashier extends Staff {
+    private Barista barista;
 
-    public Cashier(String name, int money) {
-        super(name, money);
+    public Cashier(String name, int totalOrder, Barista barista) {
+        super(name, totalOrder);
+        this.barista = barista;
     }
 
-    public void calculate(Customer customer, Barista barista, Menu coffee, String temperature) throws Exception {
-        int price = Menu.getPrice(coffee);
-
-        if (temperature.equals("hot")) {
-            Menu.isHotAvailable(coffee);
-            price -= 500;
-        }
+    public void processOrder(Customer customer, Menu coffee) {
+        int price = coffee.getPrice();
 
         if (customer.payMoney(price)) {
-            requestCoffee(barista, coffee, temperature, price);
-            getIncentive(price);
-            owner.getSales(price);
+            barista.makeCoffee(coffee);
+            changeTotalOrder(getTotalOrder() + 1);
+            Owner.getSales(price);
         }
     }
-
-    public void requestCoffee(Barista barista, Menu coffee, String temperature, int price) {
-        barista.makeCoffee(coffee, temperature, price);
-    }
-
-    public void getIncentive(int price) {
-        if (this.getName().equals(getName())) {
-            changeMoney(getMoney() + (price / 10));
-        }
-    }
-
 }

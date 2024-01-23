@@ -1,19 +1,12 @@
 package main;
 
-public class Barista extends Person {
-    public Barista(String name, int money) {
-        super(name, money);
+public class Barista extends Staff {
+    public Barista(String name, int totalOrder) {
+        super(name, totalOrder);
     }
 
-    public void makeCoffee(Menu coffee, String temperature, int price) {
-        System.out.println(temperature + coffee + " 제조 완료되었습니다.");
+    public void makeCoffee(Menu coffee) {
+        System.out.println(coffee + " 제조 완료되었습니다.");
         System.out.println("\n");
-        getIncentive(price);
-    }
-
-    public void getIncentive(int price) {
-        if (getName() == this.getName()) {
-            changeMoney(getMoney() + (price / 10));
-        }
     }
 }

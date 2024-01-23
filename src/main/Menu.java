@@ -1,9 +1,15 @@
 package main;
 
 public enum Menu {
-    AMERICANO(3000),
-    LATTE(3500),
-    VANILLALATTE(4000),
+    ICE_AMERICANO(3000),
+    HOT_AMERICANO(2500),
+
+    ICE_LATTE(3500),
+    HOT_LATTE(3000),
+
+    ICE_VANILLALATTE(4000),
+    HOT_VANILLALATTE(3500),
+
     SMOOTHIE(5000),
     ORANGEJUICE(6000);
 
@@ -13,14 +19,7 @@ public enum Menu {
         this.price = price;
     }
 
-    public static int getPrice(Menu menu) {
-        return menu.price;
-    }
-
-    public static void isHotAvailable(Menu menu) throws Exception {
-        if (menu.equals(ORANGEJUICE) || menu.equals(SMOOTHIE)) {
-            System.out.println("*해당 메뉴는 ice만 가능합니다.*");
-            throw new Exception("*해당 메뉴는 ice만 가능합니다.*");
-        }
+    public int getPrice() {
+        return price;
     }
 }
