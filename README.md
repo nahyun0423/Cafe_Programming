@@ -17,3 +17,5 @@
 ![image](https://github.com/nahyun0423/Cafe_Programming/assets/68987116/9e9de7e5-39ba-43bd-90ab-8574502622db)
 
 ![image](https://github.com/nahyun0423/Cafe_Programming/assets/68987116/baa9f344-ea0e-426f-9355-891dba248df8)
+
+![image](https://github.com/nahyun0423/java-study-cafe/assets/68987116/676412ac-e4af-40f2-a344-fa87c1cd3267)
