@@ -1,3 +1,5 @@
+package main;
+
 public class Person {
     private int id;
     private String name;
@@ -15,5 +17,13 @@ public class Person {
 
     public int getMoney() {
         return money;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
     }
 }
