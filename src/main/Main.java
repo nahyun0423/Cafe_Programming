@@ -8,7 +8,7 @@ public class Main {
         Owner owner = new Owner();
 
         Customer customer1 = new Customer("준형", 20000);
-        Customer customer2 = new Customer("지은", 20000);
+        Customer customer2 = new Customer("지은", 1000);
 
         Barista barista1 = new Barista("나현", 0);
         Barista barista2 = new Barista("예은", 0);

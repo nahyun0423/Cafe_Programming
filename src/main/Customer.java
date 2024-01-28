@@ -17,7 +17,7 @@ public class Customer {
         int money = getMoney() - price;
 
         if (money < 0) {
-            System.out.println("잔액이 부족합니다.");
+            System.out.println("잔액이 부족합니다.\n");
             return false;
         }
         changeMoney(money);
